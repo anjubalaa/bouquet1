@@ -71,10 +71,18 @@
         }
     .custom-product
     {
-        height: 600px;
+        height: 1000px;
+        background-image: url(" https://www.pixelstalk.net/wp-content/uploads/images1/Pink-peony-white-background-wallpaper-hd.jpg");
         
 
     }
+    .custom-pro
+    {
+        height: 1000px;
+        
+
+    }
+
     .slider-text
     {
         color: rgba(218, 45, 45, 0.664);
@@ -93,10 +101,7 @@
     {
         margin: 40px;
         
-        background-image: url("https://i.pinimg.com/originals/74/2e/ef/742eefb0a2320d8f46f803bd895a04e7.jpg");
-        background-position: top; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
+       
     }
     .detail-img
     {

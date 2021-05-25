@@ -12,7 +12,7 @@
             <br><br>
             <h2>{{$products['name']}}</h2>
             
-            <h3>Price : ${{$products['price']}}</h3>
+            <h3>Price : ₹{{$products['price']}}</h3>
             <h4>Category : {{$products['category']}}</h4>
             <h4>{{$products['description']}}</h4>
             <br><br>

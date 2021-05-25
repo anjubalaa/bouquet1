@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<div class="custom-order">   
+<div class="custom-product">   
     <div class="col-sm-10">
         
             <h3>MY ORDERS</h3>
@@ -17,12 +17,12 @@
                     <div class="">
                       <h2> Name :{{$item->name}}</h2>
                       <h5>Category :{{$item->category}}</h5>
-                      <h5>Price :{{$item->price}}</h5>
+                      <h5>Price : ₹ {{$item->price}}</h5>
                       <h5>Delivery Status :{{$item->status}}</h5>
                       
                       <h5>Payment Status :{{$item->payment_status}}</h5>
                       <h5>Payment Method:{{$item->payment_method}}</h5>
-                      
+                      <h5>Date and time :{{$item->created_at}}</h5>
                     </div>                   
               </div>
                              

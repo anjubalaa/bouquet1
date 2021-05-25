@@ -114,23 +114,7 @@ class AdminController extends Controller
         return view('admin.sea',['products'=>$data]);
     }
    
-    public function myOrder()
-    {
-        $userId=Session::get('user')['name'];
-         $orders= DB::table('orders')
-        ->join('users','orders.user_id','=','users.id')
-        ->get();
-        
-
-        return view('admin.orderview',['orders'=>$orders ]);
     
-    }
-    public function myOrderdel()
-    {
-    DB::table('orders')
-    ->join('users','orders.user_id','=','users.id')
-          ->delete();
-    }
     public function booking()
     {
         //
@@ -139,6 +123,7 @@ class AdminController extends Controller
         ->join('products','orders.product_id','=','products.id')
         
         ->get();
+    
         return view('admin.viewbooking',compact('orders'));
     }
 
@@ -175,5 +160,51 @@ class AdminController extends Controller
               ->where('email',$uid)
               ->delete();
               return redirect('admin.viewbooking');
+    }
+
+    public function exportorder()
+    {
+
+        
+
+        $pro=DB::table('orders')
+        ->join('users','orders.user_id','=','users.id')
+        ->join('products','orders.product_id','=','products.id')
+        ->get();
+        $proData = "";
+
+        if(count($pro)>0)
+        {
+            $proData .= '<table>
+            <tr>
+            <th>PRO ID</th>
+            <th>NAME</th>
+            <th>CUST EMAIL</th>
+            <th>Delivery Status</th>
+            <th>Pay Method</th>
+            <th>Pay Status</th>
+            <th>AMOUNT</th>
+            </tr>';
+            foreach($pro as $bills)
+            {
+                $proData .='
+                <tr>
+                <td>'. $bills->id .'</td>
+               <td>'.$bills->name .'  </td>
+               <td>'. $bills->email .'</td>
+               <td>'.$bills->status.'</td>
+               <td>'.$bills->payment_method.'</td>
+                      <td>'.$bills->payment_status.'</td>
+                      <td>  '.$bills->price.'</td
+                </tr>';
+            }
+            $proData .= '</table';
+
+        }
+        header('Content-type: application/xls');
+        header('Content-Disposition: attachment; filename=orders.xls');
+
+
+       echo $proData;
     }
 }

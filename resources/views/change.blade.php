@@ -4,8 +4,14 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
-        <form action="/login" method="POST" >
+        <form action="/ch" method="POST" >
           @csrf
+          @if (session('error'))
+          <div class="alert alert-danger"role="alert">
+            {{session('error')}}
+          </div>
+              
+          @endif
           <table class="table tbl-clr"  >
             <tbody>
                 <tr>  
@@ -13,7 +19,7 @@
                       
                       <div class="form-group">
                        <label for="exampleInputPassword1">Current Password</label></td>
-                       <td> <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                       <td> <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" >
                      </div></td>
                      </tr>
           <tr>  
@@ -29,11 +35,11 @@
                   
                   <div class="form-group">
                    <label for="exampleInputPassword3">Confirm Password</label></td>
-                   <td> <input type="password" name="cpassword" class="form-control" id="exampleInputPassword3" placeholder="Renter new Password">
+                   <td> <input type="password" name="cpassword" class="form-control" id="exampleInputPassword3" placeholder="Re-enter new Password" >
                  </div></td>
                  </tr>
           <tr>
-            <td><a href="/login"><button type="submit" class="btn btn-success">LOGIN</button></a>
+            <td><button type="submit" class="btn btn-success">Change</button>
                  </td>
           </tr>
           <tr>

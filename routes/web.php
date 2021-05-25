@@ -44,7 +44,7 @@ Route::get('/ch', function () {
 
 });
 
-// Route::get("change/{id}", [UserController::class,'change']);
+ Route::post("/change", [UserController::class,'chpass']);
 //ADMIN 
 
 Route::get("/viewproducts", [AdminController::class,'index']);
@@ -73,7 +73,10 @@ Route::get('/bills/{id}/{uid}/pay',[Admincontroller::class,'Pay']);
 
 Route::get('/payment/{id}/{uid}',[Admincontroller::class,'paymentStatus']);
 
-Route::get('/payment/{id}/{uid}',[Admincontroller::class,'deletepay']);
+Route::get('/pay/{id}/{uid}',[Admincontroller::class,'deletepay']);
+
+Route::get('/export_order',[Admincontroller::class,'exportorder']);
+
 
 
 

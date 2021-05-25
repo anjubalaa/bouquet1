@@ -13,7 +13,7 @@
               <td>
               <div  class="form-group">
               <label for="exampleInputEmail1">Email address</label></td>
-              <td><input type="email" name="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter email">
+              <td><input type="email" name="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter email" required="required">
               </div>
           </td>
         </tr>
@@ -22,7 +22,7 @@
              
              <div class="form-group">
               <label for="exampleInputPassword1">Password</label></td>
-              <td> <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <td> <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required="required">
             </div></td>
             </tr>
           <tr>

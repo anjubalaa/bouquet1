@@ -45,7 +45,7 @@
                   
                     <tr>
                          <td>{{ $item->name }}</td>
-                         <td>$ {{ $item->price  }}</td>
+                         <td> ₹ {{ $item->price  }}</td>
                          <td>{{ $item->description }}</td>
                          <td><img class="trend-img" src=" {{$item->gallery}} " ></td>
                          <td><a class ="btn btn-dark" href="editproduct/{{$item->id}}">EDIT</a></td>

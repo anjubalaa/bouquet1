@@ -56,7 +56,6 @@ if(Session::has('user'))
         <ul class="dropdown-menu">
           <li><a href="/logout">LOGOUT</a></li>
           <li><a href="/ch">CHANGE PASSWORD</a></li>
-          <li><a href="/contact">FEEDBACK</a></li>
         </ul>
       </li>
           

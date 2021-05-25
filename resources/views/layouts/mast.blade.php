@@ -73,12 +73,7 @@
               <p>Orders</p>
             </a>
           </li>
-          <li>
-            <a href="/payment/{id}/{uid}">
-              <i class="now-ui-icons shopping_cart-simple"></i>
-              <p>Cart</p>
-            </a>
-          </li>
+          
           
         </ul>
       </div>
@@ -138,7 +133,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="/logout">LOGOUT</a>
-                  <a class="dropdown-item" href="/change">CHANGE PASSWORD</a>
+                  
                  
                 </div>
               </li>

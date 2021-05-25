@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -45,33 +46,26 @@ class UserController extends Controller
         //return $req->input();
     }
 
-    public function create()
+    
+
+    public function chpass(Request $req)
     {
-        //
-    }
-/*
-    public function edit($id)
-    {
-        //
-        $data=User::find($id);
-        return view('change',['users'=>$data]);
+        $user= User::where(['email'=>$req->email])->first();
+        if(!$user || !Hash::check($req->password, $user->password))
+        {
+            return back()->with( "USERNAME OR PASSWORD NOT VALID") ;
+        }
+        
+        if(strcmp($req->get('password'),$req->get('npassword'))== 0)
+        {
+            return back()->with('Errors','Your current password cannot be same with new password');
+        }
+        $req->validate([
+            'password'=> 'required',
+            'npassword'=> 'required|string|min:6|confirmed'
+        ]);
+        
+
     }
 
-    public function update(Request $request, $id)
-    {
-        
-        $item=User::find($id);
-        $getpass=request('password');
-        $getnpass=request('npassword');
-        $getcpass=request('cpassword');
-        
-        
-        $item->Name=$getproname;
-        $item->Price=$getpropri;
-        $item->Category=$getcategory;
-        
-        $item->save();
-        return redirect('/');
-    }
-*/
 }

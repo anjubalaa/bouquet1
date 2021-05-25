@@ -110,8 +110,8 @@ class ProductController extends Controller
             $order->product_id=$cart['product_id'];
             $order->user_id=$cart['user_id'];
             $order->status="Pending";
-            $order->payment_method=$req->payment;
-            $order->payment_status = ($req->payment== 'Online_Payment') ? 'Paid' : 'Pending' ;
+            $order->payment_method=$req->answer;
+            $order->payment_status = ($req->answer== 'Online-Payment') ? 'Paid' : 'Pending' ;
             
             $order->address=$req->address;
             $order->zip=$req->zip;

@@ -13,6 +13,11 @@
         <div class="card-header">
           <h4 class="card-title"> Order Detail</h4>
         </div>
+        <ul class="right">
+          <button class="btn btn-warning" onclick="window.location.href='/export_order';" >EXPORT ORDERS  </button>
+      
+          
+        </ul>
   <form action="/payment/{id}/{uid}" method="post">
   {{ csrf_field() }}
   <div class="card-body">
@@ -26,6 +31,7 @@
                          <th>Pay Method</th>
                          <th>Pay Status</th>
        <th>AMOUNT</th>
+       <th>DATE & TIME</th>
     </thead>
     <tbody>
 
@@ -38,10 +44,11 @@
        <td>{{$bills->status}}</td>
                       <td>{{$bills->payment_method}}</td>
                       <td>{{$bills->payment_status}}</td>
-                      <td>{{$bills->price}}</td>             
+                      <td> ₹ {{$bills->price}}</td> 
+                      <td>{{$bills->created_at}}</td>     
                       @if ($bills->status!='Delivered')
                       <td><a class ="btn btn-success" href="/payment/{{$bills->product_id}}/{{$bills->email}}">Update Status</a></td>
-                      <td><a class ="btn btn-danger" href="/payment/{{$bills->product_id}}/{{$bills->email}}">CANCEL</a></td>
+                      <td><a class ="btn btn-danger" href="/pay/{{$bills->product_id}}/{{$bills->email}}">CANCEL</a></td>
                       @endif
        
        </tr>
