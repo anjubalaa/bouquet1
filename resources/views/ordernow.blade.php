@@ -74,8 +74,8 @@
                   </script>
                   <body>
                   <br>
-                  <input type="radio" value="Cash on delivery"  name="answer" > <span> Cash on Delivery</span><br><br>
-                  <input type="radio" value="Online-Payment" name="answer"  ><span>Online Payment</span>
+                  <input type="radio" value="Cash on delivery"  name="payment_method" > <span> Cash on Delivery</span><br><br>
+                  <input type="radio" value="Online-Payment" name="payment_method"  ><span>Online Payment</span>
                   <br>
                   <br>
                   <input style="display:none;" type="text" class="form-control" name="otherAnswer" id="otherAnswer" placeholder="credit card number" >
