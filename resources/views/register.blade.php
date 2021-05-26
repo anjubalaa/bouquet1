@@ -50,7 +50,7 @@
           </tr>
           <tr>
             <td>
-            <button type="submit" class="btn btn-primary">REGSTER</button></td>
+            <button type="submit" class="btn btn-primary">REGISTER</button></td>
             <br><br>
           </tr>
         </tbody>

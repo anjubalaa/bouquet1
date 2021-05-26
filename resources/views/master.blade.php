@@ -63,7 +63,7 @@
     }
     .custom-order
     {
-        height: 600px;
+        height: 800px;
         background-image: url(" https://www.pixelstalk.net/wp-content/uploads/images1/Pink-peony-white-background-wallpaper-hd.jpg");
         background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */

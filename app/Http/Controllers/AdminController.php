@@ -48,11 +48,11 @@ class AdminController extends Controller
         echo $getprogal;
         echo "<br>";
         $item=new product();
-        $item->Name=$getproname;
-        $item->Price=$getpropri;
-        $item->Category=$getcategory;
-        $item->Description=$getprodes;
-        $item->Gallery=$getprogal;
+        $item->name=$getproname;
+        $item->price=$getpropri;
+        $item->category=$getcategory;
+        $item->description=$getprodes;
+        $item->gallery=$getprogal;
         $item->save();
         return redirect('/viewproducts');
     }
@@ -74,11 +74,11 @@ class AdminController extends Controller
         $getprodes=request('description');
         $getprogal=request('gallery');
         
-        $item->Name=$getproname;
-        $item->Price=$getpropri;
-        $item->Category=$getcategory;
-        $item->Description=$getprodes;
-        $item->Gallery=$getprogal;
+        $item->name=$getproname;
+        $item->price=$getpropri;
+        $item->category=$getcategory;
+        $item->description=$getprodes;
+        $item->gallery=$getprogal;
         $item->save();
         return redirect('/viewproducts');
     }
