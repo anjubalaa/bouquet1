@@ -27,8 +27,11 @@
             </tr>
           <tr>
             <td> <button type="submit" class="btn btn-success">LOGIN</button></td>
+           
           </tr>
           <tr>
+            <td>  <label for="">Don't have an account! <a href="/register">Sign Up Here</a></label></td> 
+          </tr>
           </tbody>
           </table>
           </form>
